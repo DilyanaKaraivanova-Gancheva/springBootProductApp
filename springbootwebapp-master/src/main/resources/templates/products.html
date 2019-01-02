@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Framework Guru</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <h2>Product List</h2>
+    <div th:if="${not #lists.isEmpty(products)}">
+
+        <table id="products" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Id</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"><a href="/product/${product.id}">Id</a></td>
+                <td th:text="${product.productId}">Product Id</td>
+                <td th:text="${product.description}">descirption</td>
+                <td th:text="${product.price}">price</td>
+                <td><a th:href="${ '/product/' + product.id}">View</a></td>
+                <td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>
+                <td><a th:href="${'/product/delete/' + product.id}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+
+</script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="js/dataTableInit.js"></script>
+
+</body>
+</html>

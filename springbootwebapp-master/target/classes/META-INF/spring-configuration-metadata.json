@@ -1,0 +1,19 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "guru.springframework.configuration.StorageProperties",
+      "name": "storage",
+      "type": "guru.springframework.configuration.StorageProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "guru.springframework.configuration.StorageProperties",
+      "defaultValue": "images",
+      "name": "storage.location",
+      "description": "Folder location for storing files",
+      "type": "java.lang.String"
+    }
+  ]
+}
